@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PINECONE_API_KEY: dummy-key
+      GROQ_API_KEY: dummy-key
 
     steps:
     - name: Checkout code
