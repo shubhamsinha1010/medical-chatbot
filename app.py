@@ -27,7 +27,8 @@ docsearch = PineconeVectorStore.from_existing_index(
     embedding=embeddings
 )
 
-retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 3})
+retriever = docsearch.as_retriever(
+    search_type="similarity", search_kwargs={"k": 3})
 
 # Using Groq with Mixtral 8x7b model - fast and good for medical applications
 llm = ChatGroq(

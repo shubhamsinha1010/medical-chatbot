@@ -8,12 +8,12 @@ import os
 
 load_dotenv()
 
-PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
+PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 
-extracted_data=load_pdf_file(data='Data/')
-text_chunks=text_split(extracted_data)
+extracted_data = load_pdf_file(data='Data/')
+text_chunks = text_split(extracted_data)
 embeddings = download_hugging_face_embeddings()
 
 
