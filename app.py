@@ -13,11 +13,9 @@ app = Flask(__name__)
 
 load_dotenv()
 
-PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-GROQ_API_KEY = os.environ.get('GROQ_API_KEY')  # Changed from OpenAI to Groq
+PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY', "test-key")
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY', "test-key")
 
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY  # Changed from OpenAI to Groq
 
 embeddings = download_hugging_face_embeddings()
 
